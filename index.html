@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .hand {
+        cursor: pointer;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="col-lg-7 mx-auto rounded p-4">
+    <div class="container mt-3 main">
+      <div>
+        <div class="variants shadow shadow-xl p-4">
+          <h1>Variants</h1>
+          <hr />
+          <div class="variantContainer">
+            
+          </div>
+
+          <div class="d-flex flex-row bd-highlight mt-4">
+            <button onclick="createMoreVariantForm()" class="m-2 btn btn-dark">
+              Create More
+            </button>
+            <button onclick="createCombinations()" class="m-2 btn btn-dark">
+              Create Combinations
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="combinations shadow shadow-sm p-4">
+        <h1>combinations</h1>
+        <hr />
+        <div id="combinationcontainer"></div>
+      </div>
+    </div>
+
+    <div id="templates" hidden>
+      <div id="combinationTemplate">
+        <div class="mb-3 border p-3 rounded">
+          <div class="row">
+            <p class="col" id="combination"></p>
+            <span id="removeButton" class="col-1 hand">❌</span>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label class="form-label">MRP</label>
+              <input type="number" class="form-control" name="key" />
+            </div>
+            <div class="col">
+              <label class="form-label">Selling</label>
+              <input type="number" class="form-control" name="values" />
+            </div>
+            <div class="col">
+              <label class="form-label">Quantity</label>
+              <input
+                type="number"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+
+      <div id="variantFormTemplate" class="m-4">
+        <form onsubmit="saveVariant(event)">
+          <div class="row">
+            <div class="col-5">
+              <label class="form-label">Key</label>
+              <input type="text" class="form-control" name="key" />
+            </div>
+            <div class="col-5">
+              <label class="form-label">Values</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                name="values"
+                placeholder="v1,v2,v3"
+              />
+            </div>
+
+            <div class="col-2">
+              <label class="form-label invisible">Values</label>
+              <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+          </div>
+        </form>
+      </div>
+      ;
+    </div>
+  </body>
+
+  <script src="./index.js"></script>
+</html>
